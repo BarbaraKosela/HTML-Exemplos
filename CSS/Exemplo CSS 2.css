@@ -27,3 +27,8 @@ a:hover{
     border-width: 1px;
     border-color:firebrick;
 }
+
+a:active{
+    background-color: green;
+    color: white;
+}
