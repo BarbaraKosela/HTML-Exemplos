@@ -1,0 +1,32 @@
+﻿body {
+
+}
+
+table{
+    width: 100%;
+
+}
+
+table thead tr, table tfoot tr{
+    background-color: #ffd800;
+    height: 40px;
+    color: black;
+}
+
+table tbody tr{color: black; height: 30px; font-size: 18px; font-family: sans-serif;
+               
+}
+
+table tbody tr td{
+    padding-left: 10px;
+}
+
+table tr:nth-child(even) td{
+    background-color: #ff0000;
+
+}
+
+table tr:nth-child(odd) td{
+    background-color: #ff6a00;
+}
+
