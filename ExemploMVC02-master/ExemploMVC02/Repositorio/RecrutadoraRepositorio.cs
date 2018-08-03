@@ -46,7 +46,15 @@ namespace ExemploMVC02.Repositorio
 
         public bool Alterar(Recrutadora recrutadora)
         {
-            return false;
+            SqlCommand comando = new BancoDados().ObterConexcao();
+            comando.CommandText = "UPDATE recrutadoras SET nome = @NOME, cpf = @CPF, tempo_empresa = @TEMPO_EMPRESA, salario = @SALARIO WHERE id = @ID";
+            comando.Parameters.AddWithValue("@NOME", recrutadora.Nome);
+            comando.Parameters.AddWithValue("@CPF", recrutadora.CPF);
+            comando.Parameters.AddWithValue("@TEMPO_EMPRESA", recrutadora.TempoEmpresa);
+            comando.Parameters.AddWithValue("@SALARIO", recrutadora.Salario);
+
+            comando.Parameters.AddWithValue("@ID", recrutadora.Id);
+            return comando.ExecuteNonQuery() == 1;
         }
 
         public bool Excluir(int id)
