@@ -26,6 +26,12 @@ namespace ExemploMVC02.Controllers
             return View();
         }
 
+
+        public ActionResult Excluir(int id)
+        {
+            bool apagado = new RecrutadoraRepositorio().Excluir(id);
+            return null;
+        }
         public ActionResult Store(Recrutadora recrutadora)
         {
             int id = new RecrutadoraRepositorio().Cadastrar(recrutadora);

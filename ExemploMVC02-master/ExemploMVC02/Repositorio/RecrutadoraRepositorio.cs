@@ -51,6 +51,12 @@ namespace ExemploMVC02.Repositorio
 
         public bool Excluir(int id)
         {
+
+            SqlCommand comando = new BancoDados().ObterConexcao();
+            comando.CommandText = "DELETE FROM recrutadoras WHERE id = @ID";
+            comando.Parameters.AddWithValue("@ID", id);
+            return comando.ExecuteNonQuery() == 1;
+
             return false;
         }
         public Recrutadora ObterPeloId(int id)
