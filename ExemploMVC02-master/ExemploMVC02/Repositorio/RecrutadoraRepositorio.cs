@@ -52,7 +52,6 @@ namespace ExemploMVC02.Repositorio
             comando.Parameters.AddWithValue("@CPF", recrutadora.CPF);
             comando.Parameters.AddWithValue("@TEMPO_EMPRESA", recrutadora.TempoEmpresa);
             comando.Parameters.AddWithValue("@SALARIO", recrutadora.Salario);
-
             comando.Parameters.AddWithValue("@ID", recrutadora.Id);
             return comando.ExecuteNonQuery() == 1;
         }

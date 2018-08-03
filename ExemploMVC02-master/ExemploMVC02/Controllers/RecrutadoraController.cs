@@ -38,14 +38,16 @@ namespace ExemploMVC02.Controllers
         }
         public ActionResult Store(Recrutadora recrutadora)
         {
-            int id = new RecrutadoraRepositorio().Cadastrar(recrutadora);
+            int identificador = new RecrutadoraRepositorio().Cadastrar(recrutadora);
+            return RedirectToAction("Editar", new { id = identificador });
 
 
-            return null;
+      
         }
 
-        public ActionResult Update()
+        public ActionResult Update(Recrutadora recrutadora)
         {
+            bool alterado = new RecrutadoraRepositorio().Alterar(recrutadora);
             return null;
         }
 

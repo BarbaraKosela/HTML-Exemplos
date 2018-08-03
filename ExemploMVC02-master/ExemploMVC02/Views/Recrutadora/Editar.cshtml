@@ -13,6 +13,7 @@
 <body>
     <div> 
         <form action="/Recrutadora/Update" method="post">
+            <input type="hidden" name="recrutadora.id" value="@ViewBag.Recrutadora.Id" />
             <div>
                 <label for="campo-nome">Nome</label>
                 <input type="text" name="recrutadora.Nome" id="campo-nome" value="@ViewBag.Recrutadora.Nome">
