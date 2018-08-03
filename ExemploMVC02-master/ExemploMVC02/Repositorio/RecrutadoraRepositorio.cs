@@ -62,6 +62,24 @@ namespace ExemploMVC02.Repositorio
         public Recrutadora ObterPeloId(int id)
         {
             Recrutadora recrutadora = null;
+            SqlCommand comando = new BancoDados().ObterConexcao();
+            comando.CommandText = "SELECT nome, cpf, tempo_empresa, salario FROM recrutadoras WHERE id = @ID";
+            comando.Parameters.AddWithValue("@ID", id);
+            DataTable tabela = new DataTable();
+            tabela.Load(comando.ExecuteReader());
+            if (tabela.Rows.Count == 1)
+            {
+                recrutadora = new Recrutadora();
+                recrutadora.Id = id;
+                recrutadora.Nome = tabela.Rows[0][0].ToString();
+                recrutadora.CPF = tabela.Rows[0][1].ToString();
+                recrutadora.TempoEmpresa = Convert.ToByte(tabela.Rows[0][2].ToString());
+                recrutadora.Salario = Convert.ToDecimal(tabela.Rows[0][3].ToString());
+
+
+            }
+
+
             return recrutadora;
         }
     }

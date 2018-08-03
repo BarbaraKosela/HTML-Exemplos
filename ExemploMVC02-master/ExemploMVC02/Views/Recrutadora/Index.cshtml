@@ -18,6 +18,7 @@
                     <th>Código</th>
                     <th>Nome</th>
                     <th>CPF</th>
+                    <th>Ação</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,6 +28,14 @@
                         <td>@recrutadora.Id</td>
                         <td>@recrutadora.Nome</td>
                         <td>@recrutadora.CPF</td>
+                        <td><a href="/Recrutadora/Editar?id=@recrutadora.Id">Editar
+                            
+                            </a>
+                            <a href="/Recrutadora/Excluir?id=@recrutadora.Id">
+                                Excluir
+
+                            </a>
+                        </td>
                     </tr>
                 } 
             </tbody>
@@ -35,6 +44,7 @@
                    <th>Código</th>
                     <th>Nome</th>
                     <th>CPF</th>
+                    <th>Ação</th>
                 </tr>
             </tfoot>
         </table>
