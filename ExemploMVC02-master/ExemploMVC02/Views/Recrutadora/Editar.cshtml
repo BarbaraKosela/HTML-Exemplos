@@ -3,16 +3,8 @@
     Layout = "~/Views/Shared/Master.cshtml";
     
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Editar</title>
-</head>
-<body>
-    <div> 
+<div class="row">
+    <div class="col-md-6 offset-1">
         <form action="/Recrutadora/Update" method="post">
             <input type="hidden" name="recrutadora.id" value="@ViewBag.Recrutadora.Id" />
             <div>
@@ -34,7 +26,7 @@
                     {
                         if (i == @ViewBag.Recrutadora.TempoEmpresa)
                         {
-                            <option value="@i" selected = "selected">@i anos</option>
+                            <option value="@i" selected="selected">@i anos</option>
                         }
                     }
 
@@ -45,5 +37,5 @@
             <input type="submit" value="Editar" />
         </form>
     </div>
-</body>
-</html>
+</div>
+

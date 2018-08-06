@@ -13,6 +13,7 @@ namespace ExemploMVC02.Controllers
     public class RecrutadoraController : Controller
     {
         // GET: Recrutadora
+        [HttpGet]
         public ActionResult Index()
         {
             List<Recrutadora> recrutadoras = new RecrutadoraRepositorio().ObterTodos();
@@ -20,11 +21,13 @@ namespace ExemploMVC02.Controllers
             ViewBag.TituloPagina = "Recrutadoras";
             return View();
         }
+        [HttpGet]
         public ActionResult Cadastro()
         {
             ViewBag.TituloPagina = "Rescrutadoras - Cadastro";
             return View();
         }
+        [HttpGet]
         public ActionResult Editar(int id)
         {
             Recrutadora recrutadora = new RecrutadoraRepositorio().ObterPeloId(id);
@@ -32,12 +35,13 @@ namespace ExemploMVC02.Controllers
             return View();
         }
 
-
+        [HttpGet]
         public ActionResult Excluir(int id)
         {
             bool apagado = new RecrutadoraRepositorio().Excluir(id);
             return null;
         }
+        [HttpPost]
         public ActionResult Store(Recrutadora recrutadora)
         {
             int identificador = new RecrutadoraRepositorio().Cadastrar(recrutadora);
@@ -47,6 +51,7 @@ namespace ExemploMVC02.Controllers
       
         }
 
+       [HttpPost]
         public ActionResult Update(Recrutadora recrutadora)
         {
             bool alterado = new RecrutadoraRepositorio().Alterar(recrutadora);
