@@ -6,22 +6,22 @@
 <div class="row">
     <div class="col-md-6 offset-1">
         <form action="/Recrutadora/Update" method="post">
-            <input type="hidden" name="recrutadora.id" value="@ViewBag.Recrutadora.Id" />
+            <input type="hidden" name="Recrutadora.id" value="@ViewBag.Recrutadora.Id" />
             <div>
                 <label for="campo-nome">Nome</label>
-                <input type="text" name="recrutadora.Nome" id="campo-nome" value="@ViewBag.Recrutadora.Nome">
+                <input type="text" name="Recrutadora.Nome" id="campo-nome" value="@ViewBag.Recrutadora.Nome">
             </div>
             <div>
                 <label for="campo-cpf">CPF</label>
-                <input type="text" name="recrutadora.CPF" id="campo-cpf" value="@ViewBag.Recrutadora.CPF">
+                <input type="text" name="Recrutadora.CPF" id="campo-cpf" value="@ViewBag.Recrutadora.CPF">
             </div>
             <div>
                 <label for="campo-salario">Salário</label>
-                <input type="text" name="recrutadora.Salario" id="campo-salario" value="@ViewBag.Recrutadora.Salario">
+                <input type="text" name="Recrutadora.Salario" id="campo-salario" value="@ViewBag.Recrutadora.Salario">
             </div>
             <div>
                 <label for="campo-tempo-empresa">Tempo empresa</label>
-                <select id="campo-tempo-espera" name="recrutadora.TempoEmpresa">
+                <select id="campo-tempo-espera" name="Recrutadora.TempoEmpresa">
                     @for (int i = 0; i < 7; i++)
                     {
                         if (i == @ViewBag.Recrutadora.TempoEmpresa)

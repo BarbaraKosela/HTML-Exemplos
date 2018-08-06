@@ -41,23 +41,32 @@ namespace ExemploMVC02.Controllers
             bool apagado = new RecrutadoraRepositorio().Excluir(id);
             return null;
         }
+
         [HttpPost]
         public ActionResult Store(Recrutadora recrutadora)
         {
+
+            if (ModelState.IsValid)
+            {
             int identificador = new RecrutadoraRepositorio().Cadastrar(recrutadora);
             return RedirectToAction("Editar", new { id = identificador });
 
+            }
 
-      
+            ViewBag.recrutadora = recrutadora;
+
+            return View("Cadastro");
+
+
         }
 
-       [HttpPost]
+        [HttpPost]
         public ActionResult Update(Recrutadora recrutadora)
         {
             bool alterado = new RecrutadoraRepositorio().Alterar(recrutadora);
             return null;
         }
 
-        
+
     }
 }
