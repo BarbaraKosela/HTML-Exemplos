@@ -10,14 +10,17 @@
             <div>
                 <label for="campo-nome">Nome</label>
                 <input type="text" name="Recrutadora.Nome" id="campo-nome" value="@ViewBag.Recrutadora.Nome">
+                @Html.ValidationMessage("Recrutadora.Nome");
             </div>
             <div>
                 <label for="campo-cpf">CPF</label>
                 <input type="text" name="Recrutadora.CPF" id="campo-cpf" value="@ViewBag.Recrutadora.CPF">
+                @Html.ValidationMessage("Recrutadora.CPF");
             </div>
             <div>
                 <label for="campo-salario">Salário</label>
                 <input type="text" name="Recrutadora.Salario" id="campo-salario" value="@ViewBag.Recrutadora.Salario">
+                @Html.ValidationMessage("Recrutadora.Salario");
             </div>
             <div>
                 <label for="campo-tempo-empresa">Tempo empresa</label>
