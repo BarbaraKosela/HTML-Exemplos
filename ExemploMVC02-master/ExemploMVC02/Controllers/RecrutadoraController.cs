@@ -17,10 +17,12 @@ namespace ExemploMVC02.Controllers
         {
             List<Recrutadora> recrutadoras = new RecrutadoraRepositorio().ObterTodos();
             ViewBag.Recrutadoras = recrutadoras;
+            ViewBag.TituloPagina = "Recrutadoras";
             return View();
         }
         public ActionResult Cadastro()
         {
+            ViewBag.TituloPagina = "Rescrutadoras - Cadastro";
             return View();
         }
         public ActionResult Editar(int id)
