@@ -3,20 +3,20 @@
     Layout = "~/Views/Shared/Master.cshtml";
 }
 
-    <form action="/Recrutadora/Store" method="post" onsubmit="event.preventDefault(); validarFormulario()">
+    <form action="/Recrutadora/Store" method="post" onsubmit="validarFormulario()">
         <div class="form-group" id="div-campo-nome">
-            <label for="campo-nome">Nome <span class="text-danger">*</span></label>
-            <input type="text" name="Recrutadora.Nome" id="campo-nome" class="form-control" placeholder="Digite seu nome" required ="required">
+            <label for="campo-nome">Nome<span class="text-danger">*</span></label>
+            <input type="text" name="Recrutadora.Nome" id="campo-nome" class="form-control" placeholder="Digite seu nome" required ="required" onfocusout="validarCampoNome()">
             @Html.ValidationMessage("Recrutadora.Nome", new {@class ="text-danger" });
         </div>
         <div class ="form-group">
             <label for="campo-cpf">CPF <span class="text-danger">*</span></label>
-            <input type="text" name="Recrutadora.CPF" id="campo-cpf" class="form-control" placeholder="Digite seu CPF" required="required">
+            <input type="text" name="Recrutadora.CPF" id="campo-cpf" class="form-control" placeholder="Digite seu CPF" required="required" value="@ViewBag.Recrutadora.CPF">
             @Html.ValidationMessage("Recrutadora.CPF", new { @class = "text-danger" });
             </div>
         <div class="form-group">
             <label for="campo-salario">Salário <span class="text-danger">*</span></label>
-            <input type="text" name="Recrutadora.Salario" id="campo-salario" class="form-control" placeholder="Digite o salário" required="required">
+            <input type="text" name="Recrutadora.Salario" id="campo-salario" class="form-control" placeholder="Digite o salário" required="required" value="@ViewBag.Recrutadora.Salario">
             @Html.ValidationMessage("Recrutadora.Salario", new { @class = "text-danger" });
         </div>
             <div class="form-group">
