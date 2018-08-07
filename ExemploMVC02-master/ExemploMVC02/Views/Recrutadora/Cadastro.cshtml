@@ -3,8 +3,8 @@
     Layout = "~/Views/Shared/Master.cshtml";
 }
 
-    <form action="/Recrutadora/Store" method="post" onsubmit="validarFormulario(); return false;">
-        <div class="form-group">
+    <form action="/Recrutadora/Store" method="post" onsubmit="event.preventDefault(); validarFormulario()">
+        <div class="form-group" id="div-campo-nome">
             <label for="campo-nome">Nome <span class="text-danger">*</span></label>
             <input type="text" name="Recrutadora.Nome" id="campo-nome" class="form-control" placeholder="Digite seu nome" required ="required">
             @Html.ValidationMessage("Recrutadora.Nome", new {@class ="text-danger" });

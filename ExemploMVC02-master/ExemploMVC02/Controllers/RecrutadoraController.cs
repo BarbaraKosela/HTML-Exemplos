@@ -25,6 +25,7 @@ namespace ExemploMVC02.Controllers
         public ActionResult Cadastro()
         {
             ViewBag.TituloPagina = "Rescrutadoras - Cadastro";
+            ViewBag.Recrutadora = new Recrutadora();
             return View();
         }
         [HttpGet]
